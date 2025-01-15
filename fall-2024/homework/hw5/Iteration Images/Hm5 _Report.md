@@ -19,6 +19,7 @@ I then used the draw\_graph() function to visualize the network. This function a
 
 ![\label{fig:pre-split}](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png?raw=true)
 
+**Code Q1:**
 ```python
 #!/usr/local/bin/python3
 # testargs.py
