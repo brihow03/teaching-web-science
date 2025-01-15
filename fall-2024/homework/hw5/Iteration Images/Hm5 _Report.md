@@ -17,6 +17,8 @@ Draw the original Karate club graph (before the split) and color the nodes accor
 
 I then used the draw\_graph() function to visualize the network. This function accepts the graph GGG, node positions (calculated using nx.spring\_layout(G, seed=42)), and the node colors and sizes. The layout ensures that the nodes are spaced clearly so you can see. I also added labels to the nodes, which are numbered starting from 1\. The edges were drawn in black, and the borders of the nodes were given a thicker line to emphasize Mr. Hi (node 1\) and John A (node 34). Finally, I displayed the graph using plt.show() and added a title indicating that the graph represents the Karate Club network, colored by the factions of Mr. Hi and John A.
 
+![\label{fig:pre-split}](https://github.com/schen8180/data440/blob/main/hw5/Screen%20Shot%202023-11-15%20at%204.08.56%20PM.png?raw=true)
+
 [![][image1]](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png)
 
 Figure 1
