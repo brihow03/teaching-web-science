@@ -19,7 +19,11 @@ I then used the draw\_graph() function to visualize the network. This function a
 
 ![\label{fig:pre-split}](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png?raw=true)
 
-import networkx as nx
+```python
+#!/usr/local/bin/python3
+# testargs.py
+
+mport networkx as nx
 import matplotlib.pyplot as plt
 import random
 
@@ -55,6 +59,11 @@ def draw_graph(G, pos, node_colors, node_sizes, title):
     plt.show()
 node_colors, node_sizes = get_node_colors_and_sizes(G)
 draw_graph(G, pos, node_colors, node_sizes, "Q1: Karate Club Colored by Final Factions")
+
+
+
+
+
 
 
 
