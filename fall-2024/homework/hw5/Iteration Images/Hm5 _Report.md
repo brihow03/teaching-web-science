@@ -19,6 +19,8 @@ I then used the draw\_graph() function to visualize the network. This function a
 
 ![\label{fig:pre-split}](https://github.com/schen8180/data440/blob/main/hw5/Screen%20Shot%202023-11-15%20at%204.08.56%20PM.png?raw=true)
 
+![\label{fig:pre-split}](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png?raw=true)
+
 [![][image1]](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png)
 
 Figure 1
