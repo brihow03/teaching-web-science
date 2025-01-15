@@ -1,8 +1,8 @@
 # **HOMEWORK 5 – GRAPH PARTITIONING**
 
-### **Brianna Howell** **Data Sciwnce 440-07 \- Web Science, fall 2024** 
+### **Brianna Howell** **Data Science 440-07 \- Web Science, fall 2024** 
 
-# **Assignment**
+# Assignment
 
 You will investigate the split of the Karate Club (Zachary, 1977), describing starting on slide 92 in the Module-07 Social Networks lecture slides. You must use a Pythn or JavaScript library (as discussed in Modue-09 Graph Vis) to generate the graphs required in this assignment.
 
