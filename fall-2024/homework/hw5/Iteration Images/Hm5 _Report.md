@@ -19,6 +19,47 @@ I then used the draw\_graph() function to visualize the network. This function a
 
 ![\label{fig:pre-split}](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png?raw=true)
 
+import networkx as nx
+import matplotlib.pyplot as plt
+import random
+
+G = nx.karate_club_graph()
+pos = nx.spring_layout(G, seed=42)
+def get_node_colors_and_sizes(G):
+    node_colors=[]
+    node_sizes=[]
+    for node, data in G.nodes(data= True):
+        if data['club'] == 'Mr. Hi':
+            node_colors.append('red')
+            node_sizes.append(800)
+        else:
+            node_colors.append('white')
+            node_sizes.append(800)
+    return node_colors, node_sizes
+
+def draw_graph(G, pos, node_colors, node_sizes, title):
+    plt.figure(figsize=(12, 8))
+    labels = {node: str(node+ 1) for node in G.nodes()}
+    linewidths = [5 if node+ 1 in [1, 34] else 1.5 for node in G.nodes()]
+    nx.draw(
+        G,pos, with_labels= True,
+        node_color = node_colors,
+        node_size = node_sizes,
+        labels = labels,
+        edgecolors = 'black',
+        linewidths = linewidths,
+
+    )
+    plt.title = title
+    plt.axis('off')
+    plt.show()
+node_colors, node_sizes = get_node_colors_and_sizes(G)
+draw_graph(G, pos, node_colors, node_sizes, "Q1: Karate Club Colored by Final Factions")
+
+
+
+
+
 
 Figure 1
 
