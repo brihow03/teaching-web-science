@@ -215,9 +215,9 @@ for i, component in enumerate(gn\_components, 1):
 
 [Detecting Communities in Social Networks Using Girvan-Newman Algorithm in Python](https://techknowledgehub.org/network-visualization-using-matplotlib-and-networkx-libraries/)
 
-[Graph with Networkx and matplotlib](https://www.youtube.com/watch?v=yhZ9nVtCO5g)
-
 [Executing Python Scripts With a Shebang](https://realpython.com/python-shebang/)
+
+[Graph with Networkx and matplotlib](https://www.youtube.com/watch?v=yhZ9nVtCO5g)
 
 [NetworkX Network Analysis in Python Centraility](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.edge_betweenness_centrality.html)
 
