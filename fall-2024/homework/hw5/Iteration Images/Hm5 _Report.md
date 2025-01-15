@@ -182,7 +182,6 @@ This part of the code was used to split the graph and to count and print the num
 #!/usr/local/bin/python3
 # testargs.py
 
-
 return G_copy, iterations
 G_split, num_iterations = girvan_newman_algorithm(G, pos)
 print(f"Number of iterations to split the graph: {num_iterations}")
@@ -191,7 +190,6 @@ print("Connected components after Girvan-Newman split:")
 for i, component in enumerate(gn_components, 1):
    component_nodes = sorted(node+1 for node in component)
    print(f"Component {i}: {component_nodes}")
-
 
 return G\_copy, iterations
 
