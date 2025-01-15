@@ -59,6 +59,7 @@ def draw_graph(G, pos, node_colors, node_sizes, title):
     plt.show()
 node_colors, node_sizes = get_node_colors_and_sizes(G)
 draw_graph(G, pos, node_colors, node_sizes, "Q1: Karate Club Colored by Final Factions")
+```
 
 
 # **Question 2: Use the Girvan-Newman algorithm to illustrate the split**
