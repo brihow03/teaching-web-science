@@ -74,12 +74,9 @@ Q2: How many iterations did it take to split the graph?
 
 ## **Answer 2:** It took 10 iterations to split the graph.
 
-| ![][image2] Iteration 1 | ![][image3] Iteration 2 |
-| :---- | :---- |
-| ![][image4] Iteration 3 | ![][image5] Iteration 4 |
-| ![][image6]Iteration 5 | ![][image7]Iteration 6 |
-| ![][image8]Iteration 7 | ![][image9]Iteration 8 |
-| ![][image10]Iteration 9 | ![][image11]Iteration 10 |
+![\label{fig:pre-split}](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iteration%201.png?raw=true)
+
+
 
 **Discussion 2:** The Number of iterations to split the graph: 10
 
