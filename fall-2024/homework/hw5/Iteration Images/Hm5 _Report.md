@@ -23,7 +23,7 @@ I then used the draw\_graph() function to visualize the network. This function a
 #!/usr/local/bin/python3
 # testargs.py
 
-mport networkx as nx
+import networkx as nx
 import matplotlib.pyplot as plt
 import random
 
