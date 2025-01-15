@@ -78,9 +78,6 @@ Q2: How many iterations did it take to split the graph?
 ![\label{fig:pre-split}](https://github.com/brihow03/teaching-web-science/blob/main/fall-2024/homework/hw5/Iteration%20Images/Iterations%207_10.png?raw=true)
 
 
-
-
-
 **Discussion 2:** The Number of iterations to split the graph: 10
 
 Connected components after Girvan-Newman split:
@@ -123,7 +120,6 @@ def get_node_colors_and_sizes(G):
            node_sizes.append(800)
    return node_colors, node_sizes
 
-
 def draw_graph(G, pos, node_colors, node_sizes, title):
 plt.figure(figsize=(12, 8))
    labels = {node: str(node + 1) for node in G.nodes()}
@@ -136,23 +132,15 @@ plt.figure(figsize=(12, 8))
        edgecolors='black',
        linewidths=linewidths,
 
-
    )
    plt.title(title) 
    plt.axis('off')
    plt.show()
 
-
-
-
 G = nx.karate_club_graph()
 pos = nx.spring_layout(G, seed=42)
 
-
 def girvan_newman_algorithm(G, pos):
-
-
-
 
    G_copy = G.copy()
    node_colors, node_sizes = get_node_colors_and_sizes(G_copy)
@@ -165,7 +153,6 @@ def girvan_newman_algorithm(G, pos):
        iterations += 1
        draw_graph(G_copy, pos, node_colors, node_sizes, f"Q2: Girvan-Newman Iteration {iterations}")
 
-
    return G_copy, iterations
 G_split, num_iterations = girvan_newman_algorithm(G, pos)
 print(f"Number of iterations to split the graph: {num_iterations}")
@@ -175,131 +162,6 @@ for i, component in enumerate(gn_components, 1):
    component_nodes = sorted(node+1 for node in component)
    print(f"Component {i}: {component_nodes}")
 ```
-
-
-
-
-
-
-import networkx as nx
-
-G \= nx.karate\_club\_graph()
-
-mr\_hi\_faction \= sum(1 for \_, attr in G.nodes(data=True) if attr\['club'\] \== 'Mr. Hi')
-
-john\_a\_faction \= G.number\_of\_nodes() \- mr\_hi\_faction
-
-print(f"Number of nodes in Mr. Hi's faction: {mr\_hi\_faction}")
-
-print(f"Number of nodes in Mr. Hi's faction: {john\_a\_faction}")
-
-Number of nodes in Mr. Hi's faction: 17
-
-Number of nodes in Mr. Hi's faction: 17
-
-import networkx as nx
-
-import matplotlib.pyplot as plt
-
-import random
-
-def get\_node\_colors\_and\_sizes(G):
-
-   node\_colors \= \[\]
-
-   node\_sizes \= \[\]
-
-   for node, data in G.nodes(data=True):
-
-       if data\['club'\] \== 'Mr. Hi':
-
-           node\_colors.append('red')
-
-           node\_sizes.append(800)
-
-       else:
-
-           node\_colors.append('white')
-
-           node\_sizes.append(800)
-
-   return node\_colors, node\_sizes
-
-def draw\_graph(G, pos, node\_colors, node\_sizes, title):
-
-   plt.figure(figsize=(12, 8))
-
-   labels \= {node: str(node \+ 1) for node in G.nodes()}
-
-   linewidths \= \[5 if node \+ 1 in \[1, 34\] else 1.5 for node in G.nodes()\]
-
-   nx.draw(
-
-       G, pos, with\_labels=True,
-
-       node\_color=node\_colors,
-
-       node\_size=node\_sizes,
-
-       labels=labels,
-
-       edgecolors='black',
-
-       linewidths=linewidths,
-
-   )
-
-   plt.title(title) 
-
-   plt.axis('off')
-
-   plt.show()
-
-G \= nx.karate\_club\_graph()
-
-pos \= nx.spring\_layout(G, seed=42)
-
-def girvan\_newman\_algorithm(G, pos):
-
-   G\_copy \= G.copy()
-
-   node\_colors, node\_sizes \= get\_node\_colors\_and\_sizes(G\_copy)
-
-   iterations \= 0
-
-   while nx.number\_connected\_components(G\_copy) \< 2:
-
-       edge\_betweenness \= nx.edge\_betweenness\_centrality(G\_copy)
-
-       max\_betweenness \= max(edge\_betweenness.values())
-
-       edges\_to\_remove \= \[edge for edge, value, in edge\_betweenness.items() if value \== max\_betweenness\]
-
-       G\_copy.remove\_edges\_from(edges\_to\_remove)
-
-       iterations \+= 1
-
-       draw\_graph(G\_copy, pos, node\_colors, node\_sizes, f"Q2: Girvan-Newman Iteration {iterations}")
-
-   return G\_copy, iterations
-
-G\_split, num\_iterations \= girvan\_newman\_algorithm(G, pos)
-
-print(f"Number of iterations to split the graph: {num\_iterations}")
-
-gn\_components \= list(nx.connected\_components(G\_split))
-
-print("Connected components after Girvan-Newman split:")
-
-for i, component in enumerate(gn\_components, 1):
-
-   component\_nodes \= sorted(node+1 for node in component)
-
-   print(f"Component {i}: {component\_nodes}")
-
-
-
-
 
 # **Question 3: Compare the actual to the mathematical split**
 
