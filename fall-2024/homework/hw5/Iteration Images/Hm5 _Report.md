@@ -1,6 +1,6 @@
 # **HOMEWORK 5 – GRAPH PARTITIONING**
 
-### **Brianna Howell** **Data Science 440-07 \- Web Science, fall 2024** 
+### **Brianna Howell,** **Data Science 440-07 \- Web Science, fall 2024** 
 
 # Assignment
 
