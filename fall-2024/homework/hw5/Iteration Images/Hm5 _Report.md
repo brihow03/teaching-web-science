@@ -92,6 +92,94 @@ Component 2: \[3, 9, 10, 15, 16, 19, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
 I used the code from our class material, as well as some codes I found online, to create the visualizations and apply the Girvan-Newman algorithm to the Karate Club graph. First, I defined a function, get\_node\_colors\_and\_sizes(G), which assigned colors and sizes to the nodes in the graph based on their group. Nodes in Mr. Hi's group were given a red color and a size of 800, while the rest were assigned a white color with the same size. Next, I used the draw\_graph() function to display the graph with a spring layout, then I labeled the nodes, and highlighted Mr. Hi and John A with thicker node borders. To apply the Girvan-Newman algorithm, I created the function girvan\_newman\_algorithm(G, pos), which iteratively removed edges with the highest betweenness centrality. After each removal, I was able to see and save the updated graph to show how it split into separate components. The algorithm printed the number of iterations it took to split the graph and listed the nodes in each resulting component.
 
 **Code Q2:**
+```python
+#!/usr/local/bin/python3
+# testargs.py
+
+import networkx as nx
+G = nx.karate_club_graph()
+mr_hi_faction = sum(1 for _, attr in G.nodes(data=True) if attr['club'] == 'Mr. Hi')
+john_a_faction = G.number_of_nodes() - mr_hi_faction
+print(f"Number of nodes in Mr. Hi's faction: {mr_hi_faction}")
+print(f"Number of nodes in Mr. Hi's faction: {john_a_faction}")
+
+Number of nodes in Mr. Hi's faction: 17
+Number of nodes in Mr. Hi's faction: 17
+
+import networkx as nx
+import matplotlib.pyplot as plt
+import random
+
+
+def get_node_colors_and_sizes(G):
+   node_colors = []
+   node_sizes = []
+   for node, data in G.nodes(data=True):
+       if data['club'] == 'Mr. Hi':
+           node_colors.append('red')
+           node_sizes.append(800)
+       else:
+           node_colors.append('white')
+           node_sizes.append(800)
+   return node_colors, node_sizes
+
+
+def draw_graph(G, pos, node_colors, node_sizes, title):
+plt.figure(figsize=(12, 8))
+   labels = {node: str(node + 1) for node in G.nodes()}
+   linewidths = [5 if node + 1 in [1, 34] else 1.5 for node in G.nodes()]
+   nx.draw(
+       G, pos, with_labels=True,
+       node_color=node_colors,
+       node_size=node_sizes,
+       labels=labels,
+       edgecolors='black',
+       linewidths=linewidths,
+
+
+   )
+   plt.title(title) 
+   plt.axis('off')
+   plt.show()
+
+
+
+
+G = nx.karate_club_graph()
+pos = nx.spring_layout(G, seed=42)
+
+
+def girvan_newman_algorithm(G, pos):
+
+
+
+
+   G_copy = G.copy()
+   node_colors, node_sizes = get_node_colors_and_sizes(G_copy)
+   iterations = 0
+   while nx.number_connected_components(G_copy) < 2:
+ edge_betweenness = nx.edge_betweenness_centrality(G_copy)
+       max_betweenness = max(edge_betweenness.values())
+       edges_to_remove = [edge for edge, value, in edge_betweenness.items() if value == max_betweenness]
+       G_copy.remove_edges_from(edges_to_remove)
+       iterations += 1
+       draw_graph(G_copy, pos, node_colors, node_sizes, f"Q2: Girvan-Newman Iteration {iterations}")
+
+
+   return G_copy, iterations
+G_split, num_iterations = girvan_newman_algorithm(G, pos)
+print(f"Number of iterations to split the graph: {num_iterations}")
+gn_components = list(nx.connected_components(G_split))
+print("Connected components after Girvan-Newman split:")
+for i, component in enumerate(gn_components, 1):
+   component_nodes = sorted(node+1 for node in component)
+   print(f"Component {i}: {component_nodes}")
+```
+
+
+
+
+
 
 import networkx as nx
 
