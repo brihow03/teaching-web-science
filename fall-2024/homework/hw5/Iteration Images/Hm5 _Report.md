@@ -179,7 +179,22 @@ In question 2, all components are still connected in Iteration 1 thru 9 but we c
 
 However, I noticed that the results aren’t always the same. Sometimes, nodes that are supposed to be in the same group (marked by the same color) don’t end up in the same part of the graph after the split. Also, the final result can change depending on the order in which edges are removed. This is similar to what happens in the built-in Karate Club graph split algorithm, where the results also vary based on the edge removal sequence.
 
-This portion of my code was used to split the graph and to count and print the number of iterations it took to do so:
+This part of the code was used to split the graph and to count and print the number of iterations it took to do so:
+
+```python
+#!/usr/local/bin/python3
+# testargs.py
+
+
+return G_copy, iterations
+G_split, num_iterations = girvan_newman_algorithm(G, pos)
+print(f"Number of iterations to split the graph: {num_iterations}")
+gn_components = list(nx.connected_components(G_split))
+print("Connected components after Girvan-Newman split:")
+for i, component in enumerate(gn_components, 1):
+   component_nodes = sorted(node+1 for node in component)
+   print(f"Component {i}: {component_nodes}")
+
 
 return G\_copy, iterations
 
@@ -196,7 +211,7 @@ for i, component in enumerate(gn\_components, 1):
    component\_nodes \= sorted(node+1 for node in component)
 
    print(f"Component {i}: {component\_nodes}")
-
+```
 	
 
 ## **References:**
