@@ -52,7 +52,6 @@ def draw_graph(G, pos, node_colors, node_sizes, title):
         labels = labels,
         edgecolors = 'black',
         linewidths = linewidths,
-
     )
     plt.title = title
     plt.axis('off')
