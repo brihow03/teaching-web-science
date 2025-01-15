@@ -190,22 +190,6 @@ print("Connected components after Girvan-Newman split:")
 for i, component in enumerate(gn_components, 1):
    component_nodes = sorted(node+1 for node in component)
    print(f"Component {i}: {component_nodes}")
-
-return G\_copy, iterations
-
-G\_split, num\_iterations \= girvan\_newman\_algorithm(G, pos)
-
-print(f"Number of iterations to split the graph: {num\_iterations}")
-
-gn\_components \= list(nx.connected\_components(G\_split))
-
-print("Connected components after Girvan-Newman split:")
-
-for i, component in enumerate(gn\_components, 1):
-
-   component\_nodes \= sorted(node+1 for node in component)
-
-   print(f"Component {i}: {component\_nodes}")
 ```
 	
 
